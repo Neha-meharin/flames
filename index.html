@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            color: #ff4081;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            background: rgba(255, 223, 230, 0.9);
+            width: 80%;
+            height: 90vh;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px #ff69b4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #d81b60;
+            text-shadow: 2px 2px 4px white;
+        }
+        .slate {
+            background-color: #ff80ab;
+            padding: 20px;
+            border: 5px solid #d81b60;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 1.5em;
+            min-height: 50px;
+            color: white;
+            font-weight: bold;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1em;
+            font-family: 'Pacifico', cursive;
+            background: #fff0f5;
+            border: 2px solid #ff1493;
+            color: #ff1493;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #ff80ab;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 FLAMES Love Calculator 💕</h1>
+        <p>Enter your name and your partner's name:</p>
+        <input type="text" id="name1" placeholder="Your Name">
+        <input type="text" id="name2" placeholder="Partner's Name">
+        <button onclick="calculateFLAMES()">Find Relationship 💖</button>
+        <div class="slate" id="result">Result will appear here...</div>
+    </div>
+    <div class="cupid" id="cupid">❤️‍🔥</div>
+    <div class="arrow" id="arrow">➳</div>
+    <div class="heart-target" id="heart">💖</div>
+    <script>
+        function calculateFLAMES() {
+            let name1 = document.getElementById("name1").value.toLowerCase().replace(/\s/g, "");
+            let name2 = document.getElementById("name2").value.toLowerCase().replace(/\s/g, "");
+            let combined = name1 + name2;
+            let flames = ["Friendship", "Love ❤️", "Affection", "Marriage", "Enemy", "Sibling"];
+            let count = combined.length % flames.length;
+            let result = flames[count];
+            document.getElementById("result").innerText = "The relationship is: " + result;
+            
+           
+        }
+    </script>
+</body>
+</html>
